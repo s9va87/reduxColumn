@@ -1,13 +1,11 @@
-const initialState = [
-    {id: 1, title: 'One'},
-    {id: 2, title: 'Two'},
-    {id: 3, title: 'One'},
-]
+import {createStore} from "redux";
+import cards from "./reduce";
+// import {composeWithDevTools} from "redux-devtools-extension";
 
-const Todo = (state=initialState, action)=>{
-    switch(action.type){
-        default:
-            return state
-    }
-}
-export  default  Todo;
+
+const store = createStore(
+    cards
+
+);
+
+export default store;

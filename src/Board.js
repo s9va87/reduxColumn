@@ -1,20 +1,16 @@
-import  React from 'react';
-import  {connect} from 'react-redux'
+import React from 'react';
+import Column from "./Colon";
+import {Row} from "reactstrap";
 
-function Board(props){
-    console.log(props)
-    return(
-        <div>
-            <h2>Board</h2>
-        </div>
-    )
+function Board(props) {
+
+    const {cards, columns} = props;
+
+    return (
+        <Row>
+            {columns.map(el => <Column column={el} cards={cards}/>)}
+        </Row>
+    );
 }
 
-
-const mapStateToProps =(state)=> {
-    cards: state.cards
-}
-const mapDispatchToProps = (dispatch)=>({
-    deleteName: ()=> dispatch(),
-})
-export default  connect(mapStateToProps, mapDispatchToProps)(Board);
+export default Board;
