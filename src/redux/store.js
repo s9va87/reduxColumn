@@ -1,10 +1,11 @@
 import {createStore} from "redux";
 import cards from "./reduce";
-// import {composeWithDevTools} from "redux-devtools-extension";
+import {composeWithDevTools} from "redux-devtools-extension";
 
 
 const store = createStore(
-    cards
+    cards,
+    composeWithDevTools(applyMiddleware)
 
 );
 
