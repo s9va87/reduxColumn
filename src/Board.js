@@ -1,6 +1,6 @@
 import React from 'react';
 // import Column from "./Colon";
-import {Row} from "reactstrap";
+import {Row, connect} from "reactstrap";
 
 function Board(props) {
 
@@ -14,4 +14,7 @@ function Board(props) {
     );
 }
 
-export default Board;
+const mapStateToProps = (state) => ({
+    cards: state.cards
+})
+export default connect(mapStateToProps)(Board);
